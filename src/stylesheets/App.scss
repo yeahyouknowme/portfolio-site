@@ -1,0 +1,468 @@
+$warm-black: #27241D;
+$warm-darkest-gray: #423D33;
+$warm-darker-gray: #504A40;
+$warm-dark-gray: #625D52;
+$warm-gray: #857F72;
+$warm-light-gray: #A39E93;
+$warm-light: #B8B2A7;
+$warm-lighter: #D3CEC4;
+$warm-lightest: #E8E6E1;
+$warm-white: #FAF9F7;
+
+/*
+Multi-Purpose Classes
+*/
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.fcc-backdrop{
+    height: 100vh;
+    background-color: $warm-gray;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+Portfolio
+*/
+
+.normal-text {
+    font-family: Overpass, Roboto, sans-serif, monospace, serif;
+    color: $warm-white;
+}
+
+.splash-content{
+    height: 100vh;
+}
+
+.splash-identity {
+    background-color: $warm-darkest-gray;
+    min-height: 40vh;
+    width: 100%;
+    margin: 0;
+}
+
+.splash-body {
+    background-color: $warm-dark-gray;
+    width: 100%;
+    height: 60vh;
+}
+
+.id-content{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+
+}
+
+.id-icon-row{
+    justify-content: flex-end;
+    color: $warm-lighter;
+}
+
+.id-icon{
+    color: $warm-lighter;
+    margin-left: 10px;
+}
+
+.id-icon:hover{
+    color: $warm-white;
+    text-shadow: 0px 0px 5px $warm-black;
+}
+
+.id-pfp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.id-name{
+    display: flex;
+    margin-left: 30px;
+}
+
+.pfp-image{
+    max-width: auto;
+    min-height: 150px;
+    max-height: 200px;
+}
+
+/*
+Quote Machine
+*/
+
+#quote-box{
+    background-color: $warm-darker-gray;
+    color: $warm-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    width: 500px;
+    padding: 10px;
+    font-weight: 600;
+    border: 3px solid $warm-lightest;
+    border-radius: 4px;
+}
+
+#author{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 2em;
+    padding-right: 4em;
+}
+
+#button-row{
+    justify-content: space-between;
+
+    #tweet-quote{
+        display: flex;
+        flex-direction: row;
+        background-color: $warm-darkest-gray;
+        border: 2px solid $warm-lightest;
+        border-radius: 3px;
+        color: $warm-lightest;
+        font-weight: 600;
+        align-items: center;
+        padding: 1px;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        color: $warm-lightest;
+    }
+    #tweet-quote:hover{
+        background-color: $warm-black;
+        border: 2px solid $warm-white;
+        text-decoration: none;
+    }
+
+    #new-quote{
+        background-color: $warm-darkest-gray;
+        border: 2px solid $warm-lightest;
+        border-radius: 3px;
+        color: $warm-lightest;
+        font-weight: 600;
+    }
+    #new-quote:hover{
+        background-color: $warm-black;
+        border: 2px solid $warm-white;
+    }
+}
+/*
+Markdown Editor/Previewer
+*/
+
+#editor {
+    display: flex;
+    //box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    padding-left: 10px; 
+    resize: none;
+}
+
+#preview {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.editor-panel{
+    height: 100vh;
+}
+
+.preview-panel{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+/*
+Drum Machine
+*/
+
+.drum-row{
+    height: 33%;
+    padding-top: 10px;
+}
+
+.pad-col{
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.drum-pad{
+    display: flex;
+    color: $warm-dark-gray;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 32px;
+    padding-right: 20px;
+    border: 3px solid $warm-black;
+    border-radius: 2px;
+    height: 95%;
+    width: 95%;
+    background-color: $warm-darkest-gray;
+}
+
+.drum-pad:hover{
+    background-image: radial-gradient(circle, $warm-darker-gray, $warm-darkest-gray);
+}
+
+.drumpad-display{
+    display: flex;
+    background-color: $warm-lighter;
+    margin-right: 5px;
+    height: 40px;
+    justify-content: center;
+    align-content: center;
+    p{
+        margin-bottom: 0px;
+    }
+}
+
+#drum-machine{
+    border: 6px solid $warm-black;
+    background-color: $warm-darker-gray;
+    width: 900px;
+    height: 600px;
+    padding: 5px 5px 5px 20px;
+}
+
+
+/* 
+Calculator
+*/
+.calculator-content{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $warm-darker-gray;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    background-color: #857f72;
+    border: 2px solid #423D33;
+}
+
+.output-screen{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 15%;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #E8E6E1;
+}
+
+.output-text{
+    display: flex;
+    align-items: center;
+    height: 2em;
+    margin: 5%;
+    font-size: large;
+    font-weight: 500;
+}
+
+.formula-screen{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: auto;
+    margin: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    height: 2em;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #D3CEC4;
+}
+
+.formula-text{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.calculator-buttons{
+    padding-top: 5%;
+    padding-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.button-row{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.number-button{
+    padding: 0px;
+    margin: 2px;
+    flex-grow: 1;
+}
+
+.large-button{
+    padding: 0px;
+    margin: 2px;
+    flex-grow: 2;
+}
+
+.extra-large-button{
+    padding: 0px;
+    margin: 2px;
+    flex-grow: 3;
+}
+
+
+
+/* 
+25+5 Session/Break Timer
+*/
+
+.timer-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #847f72;
+    color: #FAF9F7;
+}
+
+.timer-face{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 400px;
+    background-color: #504a40;
+    justify-content: space-between;
+    border: 5px solid #B8B2A7;
+    border-radius: 3px;
+}
+
+.timer-controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.setting-button-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.setting-button{
+    height: 30px;
+    width: 40px;
+    margin: 5px;
+    margin-right:10px;
+    margin-left: 10px;
+    background-color: #423d33;
+    color: #e8e6e1;
+    border: 2px solid #e8e6e1;
+    border-radius: 3px;
+}
+
+.setting-button:hover{
+    border-color: #faf9f7;
+    background-color: #27241d;
+    color: #faf9f7
+}
+
+.session-block{
+    display: flex;
+    font-weight: 600;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+
+#session-length{
+    text-align: center;
+}
+
+.break-block{
+    display: flex;
+    font-weight: 600;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+#break-length{
+    text-align: center;
+}
+
+#timer-block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#timer-label{
+    text-align: center;
+    font-weight: 600;
+    height: 2em;
+}
+
+#time-left{
+    width: 60%;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: 600;
+    align-self: center;
+    background-color: #D3CEC4;
+    border: 3px ridge #faf9f7;
+    color: #423d33;
+}
+
+.timer-button-row{
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+}
+
+.timer-button{
+    border: 2px solid #e8e6e1;
+    border-radius: 2px;
+    font-weight: 600;
+    width: 90px;
+    height: 40px;
+    background-color: #423d33;
+    color: #e8e6e1;
+}
+
+.timer-button:hover{
+    border-color: #faf9f7;
+    background-color: #27241d;
+    color: #faf9f7
+}
