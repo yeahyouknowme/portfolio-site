@@ -27,7 +27,7 @@ class Splash extends React.Component{
             this.setState({[target]: 'hide'})
         }
         else{
-            console.error("The Collaspible is out of service. Please try again later. ")
+            console.error("The Collapsible is out of service. Please try again later. ")
         }
     }
 
