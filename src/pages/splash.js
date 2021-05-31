@@ -46,10 +46,10 @@ class Splash extends React.Component{
                                 <a className="id-email" href="mailto:forrest.webdev@gmail.com">
                                     forrest.webdev@gmail.com
                                 </a>
-                                <a href="https://github.com/yeahyouknowme/portfolio-site">
+                                <a target="_blank" href="https://github.com/yeahyouknowme/portfolio-site">
                                     <i className="id-icon fab fa-github-square fa-3x"></i>
                                 </a>
-                                <a href="https://www.freecodecamp.org/yeahyouknowme">
+                                <a target="_blank" href="https://www.freecodecamp.org/yeahyouknowme">
                                     <i className="id-icon fab fa-free-code-camp fa-3x"></i>
                                 </a>
                             </div>
