@@ -156,6 +156,10 @@ Portfolio
     .cert-name{
         color: $warm-lighter;
     }
+    .cert-name:hover{
+        color: $warm-light-gray;
+        text-decoration: none;
+    }
     .cert-icon{
         color: $warm-lighter;
     }
@@ -176,6 +180,11 @@ Portfolio
 
 .collapsible-line-item{
     height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.collapsible-line-item:nth-child(odd){
+    background-color: #504A40;
 }
 
 

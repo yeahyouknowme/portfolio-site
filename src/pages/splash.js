@@ -5,16 +5,32 @@ import '../stylesheets/App.scss';
 
 
 const LineItem = props => {
-    return(
-        <div className="collapsible-line-item flex-row">
 
-        </div>
+    //just trying things out
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (newWindow) newWindow.opener = null;
+    };
+
+    return(
+        <Link
+            className="collapsible-line-item flex-row"
+            to={props.projectUrl} > 
+            {props.projectName}
+        </Link>
     )
 }
 
 const CollapsibleFrame = props => {
     const [collapse, setCollapse] = useState(false);
 
+    const items = [];
+
+    if(props.projectUrls) {
+        props.projectUrls.map((project) => (
+            items.push(<LineItem projectUrl={project.url} projectName={project.title} />)   
+        ))
+    }
 
     return(
         <div className="flex-column cert-frame">
@@ -41,7 +57,7 @@ const CollapsibleFrame = props => {
             <div 
                 className={collapse ? 'cert-body show': 'cert-body hide'}
             >
-                    ...content
+                {items}
             </div>
         </div> 
     )
@@ -108,6 +124,15 @@ class Splash extends React.Component{
                             certLink="https://www.freecodecamp.org/certification/yeahyouknowme/javascript-algorithms-and-data-structures"
                         />
                         <CollapsibleFrame
+                            projectUrls={
+                                [
+                                    {title: 'Random Quote Machine', url: '/quotes'},
+                                    {title: 'Markdown Previewer', url: '/markdown-editor'},
+                                    {title: 'Drum Machine', url: '/drum-machine'},
+                                    {title: 'Calculator', url: '/calculator'},
+                                    {title: 'Countdown Timer', url: '/timer'}
+                                ]
+                            }
                             title="Front End Libraries Certificate"
                             icon="fab fa-free-code-camp fa-2x"
                             certLink="https://www.freecodecamp.org/certification/yeahyouknowme/front-end-libraries"
