@@ -1,6 +1,39 @@
-import React from 'react';
-import {Image, Row, Col, Nav} from 'react-bootstrap';
+import React, {useState} from 'react';
+import {Image} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import '../stylesheets/App.scss';
+
+const CollapsibleFrame = props => {
+    const [collapse, setCollapse] = useState(false);
+
+
+    return(
+        <div className="flex-column cert-frame">
+            <div id="fccNodeCert" onClick={() => setCollapse(!collapse)} className="cert-header flex-row">
+                <a 
+                    target='_blank'
+                    href={props.certLink}
+                    className='cert-icon'
+                > 
+                    <i className={props.icon}></i>
+                </a>
+                <div className='cert-name'>
+                    {props.title}
+                </div>
+                <button id="fccNodeCert" onClick={() => setCollapse(!collapse)} className='collapse-btn'>
+                    {collapse === false
+                        ? <i className="fas fa-caret-right fa-2x"></i>
+                        : <i className="fas fa-caret-down fa-2x"></i>}
+                </button>
+            </div> 
+            <div 
+                className={collapse ? 'cert-body show': 'cert-body hide'}
+            >
+                    ...content
+            </div>
+        </div> 
+    )
+}
 
 class Splash extends React.Component{
     constructor(props){
@@ -57,90 +90,21 @@ class Splash extends React.Component{
                 </div>
                 <div className="splash-body flex-row">
                     <div className="cert-content flex-column">
-                    {/* COMPTIA A+ CERT */}
-                        <div className="flex-column cert-frame">
-                            <a href className="cert-header a-plus flex-row">
-                                <a 
-                                    target='_blank'
-                                    href="#"
-                                    className='cert-icon-generic'
-                                > 
-                                    <i className="fas fa-certificate fa-2x"></i>
-                                </a>
-                                <div className='cert-name a-plus-name'>
-                                    Comptia A+ Certificate
-                                </div>
-                            </a> 
-                        </div> 
-                    {/* FCC JAVASCRIPT CERT AND PROJECTS*/}
-                        <div className="flex-column cert-frame">
-                            <div id="fccJSCert" onClick={this.ToggleCollapsible} className="cert-header flex-row">
-                                <a 
-                                    target='_blank'
-                                    href="https://www.freecodecamp.org/certification/yeahyouknowme/javascript-algorithms-and-data-structures" 
-                                    className='cert-icon'
-                                > 
-                                    <i className="fab fa-free-code-camp fa-2x"></i>
-                                </a>
-                                <div className='cert-name'>
-                                    JavaScript Certificate
-                                </div>
-                                <button id="fccJSCert" onClick={this.ToggleCollapsible} className='collapse-btn'>
-                                    {this.state.fccJSCert === 'hide'
-                                        ? <i className="fas fa-caret-right fa-2x"></i>
-                                        : <i className="fas fa-caret-down fa-2x"></i>}
-                                </button>
-                            </div> 
-                            <div className={"cert-body " + this.state.fccJSCert}>
-                                    ...content
-                            </div>
-                        </div> 
-                        {/* FCC REACT CERT AND PROJECTS */}
-                        <div className="flex-column cert-frame">
-                            <div id="fccReactCert" onClick={this.ToggleCollapsible} className="cert-header flex-row">
-                                <a 
-                                    target='_blank'
-                                    href="https://www.freecodecamp.org/certification/yeahyouknowme/javascript-algorithms-and-data-structureshttps://www.freecodecamp.org/certification/yeahyouknowme/front-end-libraries" 
-                                    className='cert-icon'
-                                > 
-                                    <i className="fab fa-free-code-camp fa-2x"></i>
-                                </a>
-                                <div className='cert-name'>
-                                    Front End Libraries Certificate
-                                </div>
-                                <button id="fccReactCert" onClick={this.ToggleCollapsible} className='collapse-btn'>
-                                    {this.state.fccReactCert === 'hide'
-                                        ? <i className="fas fa-caret-right fa-2x"></i>
-                                        : <i className="fas fa-caret-down fa-2x"></i>}
-                                </button>
-                            </div> 
-                            <div className={"cert-body " + this.state.fccReactCert}>
-                                    ...content
-                            </div>
-                        </div> 
-                        {/* APIs & MICROSERVICES CERT AND PROJECTS */}
-                        <div className="flex-column cert-frame">
-                            <div id="fccNodeCert" onClick={this.ToggleCollapsible} className="cert-header flex-row">
-                                <a 
-                                    target='_blank'
-                                    href="https://www.freecodecamp.org/certification/yeahyouknowme/javascript-algorithms-and-data-structureshttps://www.freecodecamp.org/certification/yeahyouknowme/front-end-libraries" 
-                                    className='cert-icon'
-                                > 
-                                    <i className="fab fa-free-code-camp fa-2x"></i>
-                                </a>
-                                <div className='cert-name'>
-                                    API & Microservice Certificate
-                                </div>
-                                <button id="fccNodeCert" onClick={this.ToggleCollapsible} className='collapse-btn'>
-                                    {this.state.fccNodeCert === 'hide'
-                                        ? <i className="fas fa-caret-right fa-2x"></i>
-                                        : <i className="fas fa-caret-down fa-2x"></i>}
-                                </button>
-                            </div> 
-                            <div className={"cert-body " + this.state.fccNodeCert}>
-                                    ...content
-                            </div>
-                        </div> 
+                        <CollapsibleFrame
+                            title="Javascript Certificate"
+                            icon="fab fa-free-code-camp fa-2x"
+                            certLink="https://www.freecodecamp.org/certification/yeahyouknowme/javascript-algorithms-and-data-structures"
+                        />
+                        <CollapsibleFrame
+                            title="Front End Libraries Certificate"
+                            icon="fab fa-free-code-camp fa-2x"
+                            certLink="https://www.freecodecamp.org/certification/yeahyouknowme/front-end-libraries"
+                        />
+                        <CollapsibleFrame
+                            title="API & Microservices Certificate" 
+                            icon="fab fa-free-code-camp fa-2x"
+                            certLink="https://www.freecodecamp.org/certification/yeahyouknowme/apis-and-microservices"
+                        />
                     </div>
                 </div>
             </div>
