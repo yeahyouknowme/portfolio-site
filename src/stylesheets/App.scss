@@ -123,6 +123,10 @@ Portfolio
     margin-bottom: 1em;
 }
 
+.a-plus{
+    position: relative;
+}
+
 .cert-header{
     justify-content: space-between;
     align-items: center;
@@ -130,52 +134,49 @@ Portfolio
     color: $warm-white;
     height: 3em;
     font-weight: 600;
-}
-
-.a-plus{
-    position: relative;
+    .cert-name{
+        color: $warm-white;
+        text-align: center;
+        padding: 0px;
+    }
+    .cert-icon{
+        color: $warm-white;
+        margin-left: 1em;
+    }
+    .cert-icon-generic{
+        color: $warm-white;
+        margin-left: 1.1em;
+    }
 }
 
 .cert-header:hover{
     color: $warm-lighter;
     text-decoration: none;
     cursor: pointer;
+    .cert-name{
+        color: $warm-lighter;
+    }
     .cert-icon{
         color: $warm-lighter;
+    }
+    .cert-icon:hover{
+        color: $warm-light-gray;
     }
     .cert-icon-generic{
         color: $warm-lighter;
     }
-}
-
-.cert-header .cert-icon{
-    color: $warm-white;
-    margin-left: 1em;
-}
-
-.cert-header .cert-icon:hover{
-    color: $warm-light-gray;
-}
-
-.cert-header .cert-icon-generic{
-    color: $warm-white;
-    margin-left: 1.1em;
-}
-
-.cert-header .cert-icon-generic:hover{
-    color: $warm-light-gray;
-}
-
-.cert-header .cert-name{
-    pointer-events: none;
-    text-align: center;
-    padding: 0px;
+    .cert-icon-generic:hover{
+        color: $warm-light-gray;
+    }
 }
 
 .a-plus-name{
     margin-right: 7em;
 }
 
+.collapsible-line-item{
+    height: 50px;
+}
 
 
 .collapse-btn{
@@ -212,7 +213,7 @@ Portfolio
 }
 
 .show{
-    height: 300px;
+    height: 250px;
 }
 
 /*

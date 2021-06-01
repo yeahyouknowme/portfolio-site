@@ -3,6 +3,15 @@ import {Image} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import '../stylesheets/App.scss';
 
+
+const LineItem = props => {
+    return(
+        <div className="collapsible-line-item flex-row">
+
+        </div>
+    )
+}
+
 const CollapsibleFrame = props => {
     const [collapse, setCollapse] = useState(false);
 
@@ -17,9 +26,12 @@ const CollapsibleFrame = props => {
                 > 
                     <i className={props.icon}></i>
                 </a>
-                <div className='cert-name'>
+                <a 
+                    href={props.certLink}
+                    className='cert-name'
+                >
                     {props.title}
-                </div>
+                </a>
                 <button id="fccNodeCert" onClick={() => setCollapse(!collapse)} className='collapse-btn'>
                     {collapse === false
                         ? <i className="fas fa-caret-right fa-2x"></i>
