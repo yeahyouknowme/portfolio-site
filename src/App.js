@@ -1,5 +1,5 @@
 import {Row, Col, Navbar, Container} from 'react-bootstrap';
-import {BrowserRouter as Router, Switch, Route, useLocation, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, useLocation, Link, Redirect} from 'react-router-dom';
 import Calculator from './pages/calculator';
 import Splash from './pages/splash';
 import DrumMachine from './pages/drum-machine';
@@ -25,6 +25,37 @@ class App extends React.Component {
                   <Route path="/quotes" component={QuoteMachine} />
                   <Route path="/calculator" component={Calculator} />
                   <Route path="/timer" component={SessionTimer} /> 
+                  <Route 
+                    path="/timestamp-service" 
+                    component={() => {
+                      window.location.href = 'https://fcc-timestamp.yeahyouknowme.repl.co/';
+                      <Redirect to="/" />
+                    }} 
+                  />
+                  <Route
+                    path="/header-parser"
+                    component={() => {
+                      window.location.href = 'https://fcc-get-header.yeahyouknowme.repl.co/'
+                    }}
+                  />
+                  <Route
+                    path="/url-shortener"
+                    component={() => {
+                      window.location.href = 'https://fcc-url-shortener.yeahyouknowme.repl.co/#'
+                    }}
+                  />
+                  <Route
+                    path="/exercise-tracker"
+                    component={() => {
+                      window.location.href = 'https://fcc-exercisetracker.yeahyouknowme.repl.co/#'
+                    }}
+                  />
+                  <Route
+                    path="/file-metadata"
+                    component={() => {
+                      window.location.href = 'https://fcc-metadata.yeahyouknowme.repl.co/#'
+                    }}
+                  />
                 </Switch>
           </Container>
         </div>

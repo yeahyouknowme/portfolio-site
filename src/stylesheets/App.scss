@@ -182,7 +182,15 @@ Portfolio
     height: 50px;
     align-items: center;
     justify-content: center;
+    color: $warm-white;
+    font-weight: 600;
 }
+
+.collapsible-line-item:hover{
+    color: $warm-light-gray;
+    text-decoration: none;
+}
+
 .collapsible-line-item:nth-child(odd){
     background-color: #504A40;
 }

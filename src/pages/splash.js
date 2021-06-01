@@ -15,7 +15,8 @@ const LineItem = props => {
     return(
         <Link
             className="collapsible-line-item flex-row"
-            to={props.projectUrl} > 
+            to={props.projectUrl} 
+        > 
             {props.projectName}
         </Link>
     )
@@ -138,6 +139,15 @@ class Splash extends React.Component{
                             certLink="https://www.freecodecamp.org/certification/yeahyouknowme/front-end-libraries"
                         />
                         <CollapsibleFrame
+                            projectUrls={
+                                [
+                                    {title: 'Timestamp Microservice', url: '/timestamp-service'},
+                                    {title: 'Request Header Parser', url: '/header-parser'},
+                                    {title: 'Url Shortener', url: '/url-shortener'},
+                                    {title: 'Exercise Tracker', url: '/exercise-tracker'},
+                                    {title: 'File Metadata', url: '/file-metadata'}
+                                ]
+                            }
                             title="API & Microservices Certificate" 
                             icon="fab fa-free-code-camp fa-2x"
                             certLink="https://www.freecodecamp.org/certification/yeahyouknowme/apis-and-microservices"
