@@ -187,12 +187,17 @@ Portfolio
 }
 
 .collapsible-line-item:hover{
-    color: $warm-light-gray;
+    background-color: $warm-light-gray;
     text-decoration: none;
+    color: $warm-white;
 }
 
 .collapsible-line-item:nth-child(odd){
-    background-color: #504A40;
+    background-color: $warm-darker-gray;
+}
+
+.collapsible-line-item:nth-child(odd):hover{
+    background-color: $warm-light-gray;
 }
 
 
